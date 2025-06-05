@@ -4,7 +4,20 @@
 
 function agruparPorPropiedad(arreglo, propiedad){
 
+    const resultadoAMostrar = arreglo.reduce((grupo, elemento)=>{
+        const clave = elemento[propiedad];
 
+        if(!grupo[clave]){
+            grupo[clave] = [];
+        }
+
+        grupo[clave].push(elemento);
+
+        return grupo;
+    }, {});
+
+
+    return resultadoAMostrar;
 }
 
  const datos = [
@@ -14,5 +27,5 @@ function agruparPorPropiedad(arreglo, propiedad){
  { categoria: 'verdura', nombre: 'lechuga' }
  ]
 
-const resultado = agruparPorPropiedad();
+const resultado = agruparPorPropiedad(datos, 'categoria');
 console.log(resultado);
