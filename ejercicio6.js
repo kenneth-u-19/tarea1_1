@@ -27,4 +27,4 @@
 
 
  const resultado = combinarListasSinRepetir(lista1, lista2);
- console.log(resultado);
+console.log(resultado);
